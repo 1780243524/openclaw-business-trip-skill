@@ -1,0 +1,8 @@
+{
+  "setupAt": "2026-03-22T17:05:38Z",
+  "python": "Python 3.11.6",
+  "node": "v22.17.0",
+  "defusedxml": "0.7.1",
+  "docxSkill": true,
+  "wecomDocSkill": true
+}

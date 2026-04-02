@@ -1,0 +1,15 @@
+# business-trip-assistant .gitignore
+
+# 隐私目录 — 保留目录结构（.gitkeep），忽略实际内容
+templates/*
+!templates/.gitkeep
+
+preferences/*
+!preferences/.gitkeep
+
+profiles/*
+!profiles/.gitkeep
+!profiles/.setup_done
+
+data/*
+!data/.gitkeep
