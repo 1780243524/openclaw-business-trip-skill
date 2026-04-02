@@ -48,22 +48,22 @@ SKILL_DIR=$(dirname "$(find ~/.openclaw/workspace/skills /projects/.openclaw/ski
 
 | 用户意图 | 子 Skill |
 |---------|---------|
-| 首次使用/初始化环境/检查依赖 | [setup](sub-skills/setup/GUIDE.md) |
-| 设置个人信息、录入档案、我叫XX、切换用户、查看档案 | [user-profile](sub-skills/user-profile/GUIDE.md) |
-| 新建出差、创建出差ID、开始出差 | [trip-init](sub-skills/trip-init/GUIDE.md) |
-| 生成/查看出差日程 | [schedule-gen](sub-skills/schedule-gen/GUIDE.md) |
-| 记录会议、上传录音/文件、生成会议纪要 | [meeting-notes](sub-skills/meeting-notes/GUIDE.md) |
-| 结束出差、生成出差报告 | [report-gen](sub-skills/report-gen/GUIDE.md) |
-| 查看/上传/更换模版 | [template-mgr](sub-skills/template-mgr/GUIDE.md) |
-| 修改/调整/微调已生成内容、记住偏好规则、"这里不对"、"以后要这样" | [content-refine](sub-skills/content-refine/GUIDE.md) |
+| 首次使用/初始化环境/检查依赖 | [setup](sub-skills/setup/SKILL.md) |
+| 设置个人信息、录入档案、我叫XX、切换用户、查看档案 | [user-profile](sub-skills/user-profile/SKILL.md) |
+| 新建出差、创建出差ID、开始出差 | [trip-init](sub-skills/trip-init/SKILL.md) |
+| 生成/查看出差日程 | [schedule-gen](sub-skills/schedule-gen/SKILL.md) |
+| 记录会议、上传录音/文件、生成会议纪要 | [meeting-notes](sub-skills/meeting-notes/SKILL.md) |
+| 结束出差、生成出差报告 | [report-gen](sub-skills/report-gen/SKILL.md) |
+| 查看/上传/更换模版 | [template-mgr](sub-skills/template-mgr/SKILL.md) |
+| 修改/调整/微调已生成内容、记住偏好规则、"这里不对"、"以后要这样" | [content-refine](sub-skills/content-refine/SKILL.md) |
 
 ## 首次使用自动检查
 
 **每个子 skill 执行前**，先检查 `profiles/.setup_done` 是否存在：
 - **存在** → 直接执行，无额外开销
-- **不存在** → 先执行 [setup](sub-skills/setup/GUIDE.md) 完成环境初始化，再继续原任务
+- **不存在** → 先执行 [setup](sub-skills/setup/SKILL.md) 完成环境初始化，再继续原任务
 
-读取对应子 skill 的 GUIDE.md 后再执行。
+读取对应子 skill 的 SKILL.md 后再执行。
 
 ## 模版使用规则
 
