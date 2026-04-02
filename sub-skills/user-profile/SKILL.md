@@ -30,14 +30,14 @@ SKILL_DIR=$(dirname "$(find ~/.openclaw/workspace/skills /projects/.openclaw/ski
 ```json
 {
   "userId": "zhangsan",
-  "name": "李润玖",
-  "company": "中金公司",
+  "name": "张三",
+  "company": "某公司",
   "department": "股票业务部",
   "title": "投资经理",
   "email": "zhangsan@example.com",
   "phone": "",
   "team": ["同事A", "同事B"],
-  "defaultSignature": "李润玖（中金公司股票业务部）",
+  "defaultSignature": "张三（某公司业务部）",
   "notes": "其他备注信息",
   "createdAt": "ISO8601时间戳",
   "updatedAt": "ISO8601时间戳"
@@ -49,7 +49,7 @@ SKILL_DIR=$(dirname "$(find ~/.openclaw/workspace/skills /projects/.openclaw/ski
 |------|------|------|
 | `name` | 出差人姓名、纪要"作者"字段 | ✅ |
 | `company` | 所属公司 | 可选 |
-| `department` | 部门，用于"中金参会人员"等字段 | 可选 |
+| `department` | 部门，用于"我方参会人员"等字段 | 可选 |
 | `title` | 职位 | 可选 |
 | `defaultSignature` | 纪要/报告中"参会人员"的完整签名格式 | 可选 |
 | `team` | 常用随行同事，供纪要参会人员字段参考 | 可选 |
@@ -64,11 +64,11 @@ SKILL_DIR=$(dirname "$(find ~/.openclaw/workspace/skills /projects/.openclaw/ski
 触发词：「设置我的信息」「我叫XX」「录入个人信息」「更新档案」
 
 1. 从用户描述中提取个人信息（自然语言解析，不足时询问 `name` 和 `company`）
-2. 生成 `userId`：取姓名拼音小写（如"李润玖" → `zhangsan`）；若冲突则追加数字
+2. 生成 `userId`：取姓名拼音小写（如"张三" → `zhangsan`）；若冲突则追加数字
 3. 写入 `profiles/{userId}.json`
 4. 写入 `profiles/active.json`，设为当前激活用户
 5. 回复确认：
-   > ✅ 档案已保存：**李润玖**（中金公司股票业务部）
+   > ✅ 档案已保存：**张三**（某公司业务部）
    > 后续创建出差档案时将自动使用此信息，无需重复填写。
 
 ### 查看当前档案
@@ -115,7 +115,7 @@ SKILL_DIR=$(dirname "$(find ~/.openclaw/workspace/skills /projects/.openclaw/ski
 | 模版字段 | 来源 |
 |---------|------|
 | 作者 | `name` |
-| 中金参会人员（我方） | `defaultSignature` 或 `{name}（{company}{department}）` |
+| 我方参会人员 | `defaultSignature` 或 `{name}（{company}{department}）` |
 | 出差人员（报告） | `name` |
 
 ---
@@ -123,12 +123,12 @@ SKILL_DIR=$(dirname "$(find ~/.openclaw/workspace/skills /projects/.openclaw/ski
 ## 示例对话
 
 ```
-用户：我叫李润玖，中金公司股票业务部
-→ ✅ 档案已保存：李润玖（中金公司股票业务部）
+用户：我叫张三，某公司业务部
+→ ✅ 档案已保存：张三（某公司业务部）
    后续出差档案将自动使用此信息。
 
 用户：帮我新建一个去北京的出差档案
-→ 出差人自动设为：李润玖（来自用户档案）
+→ 出差人自动设为：张三（来自用户档案）
   ✅ 出差档案已创建：TRIP-北京-20260325
 
 用户：这次不是我去，帮同事张伟创建

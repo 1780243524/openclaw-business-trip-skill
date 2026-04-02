@@ -64,7 +64,7 @@ PACK="$DOCX_SKILL/ooxml/scripts/pack.py"
 
 - 从上下文获取 trip-id
 - 读取 `$SKILL_DIR/data/{trip-id}/meta.json`，统计已有会议数，自动编号（meeting-001、meeting-002...）
-- 从 `meta.json` 的 `traveler` 字段获取出差人姓名，用于填充纪要中的"作者"/"中金参会人员"等字段
+- 从 `meta.json` 的 `traveler` 字段获取出差人姓名，用于填充纪要中的"作者"/"我方参会人员"等字段
 - 若用户指定了会议名称，在编号后追加（如 `meeting-001-客户拜访`）
 
 ### 2. 提取关键信息

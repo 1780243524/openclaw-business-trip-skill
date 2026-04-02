@@ -62,7 +62,7 @@ mkdir -p "$SKILL_DIR/data/{trip-id}/meetings"
 {
   "tripId": "TRIP-北京-20260320",
   "traveler": "张三",
-  "travelerSignature": "张三（中金公司股票业务部）",
+  "travelerSignature": "张三（某公司业务部）",
   "destination": "北京",
   "startDate": "2026-03-20",
   "purpose": "用户描述的出差目的",
@@ -77,7 +77,7 @@ mkdir -p "$SKILL_DIR/data/{trip-id}/meetings"
 
 - `traveler`：出差人姓名（用于显示）
 - `travelerSignature`：出差人完整签名（来自用户档案的 `defaultSignature`，无档案时同 `traveler`）
-- 后续生成纪要时，「作者」用 `traveler`，「中金参会人员」用 `travelerSignature`
+- 后续生成纪要时，「作者」用 `traveler`，「我方参会人员」用 `travelerSignature`
 
 ### 5. 回复用户
 
